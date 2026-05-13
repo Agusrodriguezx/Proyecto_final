@@ -27,13 +27,27 @@ pip install -r requirements.txt
 
 ## Fucionamiento de las pruebas
 
-- test_login.py — Pruebas de autenticación
-test_login_validation: Verifica que tras el login el usuario es redirigido a /inventory.html
+### test_login.py — Pruebas de autenticación
 
-- test_inventory.py — Pruebas del catálogo
-test_inventory_title: Verifica que el título de la página sea "Swag Labs"
-test_productos_visibles: Verifica que se muestre al menos un producto en el catálogo
-test_ui_elements: Verifica que el menú hamburguesa y el filtro de productos estén visibles
+- `test_login_validation`
+    - Verifica que tras el login el usuario es redirigido a /inventory.html
 
-- test_cart.py — Pruebas del carrito
-test_cart: Agrega el primer producto al carrito, verifica el contador, navega al carrito y comprueba que el producto agregado coincida
+---
+
+### test_inventory.py — Pruebas del catálogo
+
+- `test_inventory_title`
+    - Verifica que el título de la página sea "Swag Labs"
+
+- `test_productos_visibles`
+    - Verifica que se muestre al menos un producto en el catálogo
+
+- `test_ui_elements` 
+    - Verifica que el menú hamburguesa y el filtro de productos estén visibles
+
+---
+
+### test_cart.py — Pruebas del carrito
+
+- `test_cart`
+    - Agrega el primer producto al carrito, verifica el contador, navega al carrito y comprueba que el producto agregado coincida
