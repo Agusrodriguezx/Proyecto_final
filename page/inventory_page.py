@@ -24,7 +24,7 @@ class InventoryPage:
         return self.driver.find_element(*self.menu_button).is_displayed()
 
     def filtro_visible(self):
-        return self.driver.find_elements(*self.filtro).is_displayed()
+        return self.driver.find_element(*self.filtro).is_displayed()
 
     def agregar_producto_al_carrito(self):
         self.driver.find_element(*self.add_to_cart_buttons).click()

@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
-from utils.LoginPage import login
+from page.login_page import LoginPage
+from utils.data_reader import read_users_csv
 
 @pytest.fixture
 def driver():
@@ -14,6 +15,11 @@ def driver():
     driver.quit()
 
 @pytest.fixture
-def login_in_driver(driver):
-    login(driver)
-    yield driver
+def driver_logged(driver):
+    login_page = LoginPage(driver)
+    
+    user = read_users_csv()[0]
+
+    login_page.login(user["username"],user["password"])
+
+    return driver
