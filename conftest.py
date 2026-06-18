@@ -6,7 +6,7 @@ from utils.data_reader import read_users_csv
 @pytest.fixture
 def driver():
     options = webdriver.ChromeOptions()
-    options.add_argument("--incognito") # abrir navegador como incógnito
+    options.add_argument("--incognito") 
 
     driver = webdriver.Chrome(options= options)
 
