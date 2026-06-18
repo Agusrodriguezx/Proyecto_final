@@ -10,12 +10,15 @@ El proyecto utiliza el patrón de diseño Page Object Model (POM) para mejorar l
 
 Además, se implementó un enfoque de Data-Driven Testing utilizando archivos CSV y JSON para separar los datos de prueba de la lógica de los tests, facilitando la reutilización y el mantenimiento de los escenarios automatizados.
 
+Como práctica adicional, se incorporó generación de reportes HTML, capturas de pantalla automáticas y logging en las pruebas de autenticación, con el objetivo de facilitar el análisis y la depuración de errores.
+
 
 ## Tecnologías usadas
 - Python
 - Selenium WebDriver
 - Pytest
 - Pytest HTML
+- Logging
 - CSV y JSON (Data-Driven Testing)
 - Google Chrome + ChromeDriver
 - Git
@@ -46,6 +49,10 @@ pytest --html=report.html --self-contained-html
 
 - `test_login_invalid_password`
     - Verifica que se muestre el mensaje de error correspondiente al ingresar una contraseña inválida.
+
+- Implementa logging para registrar la ejecución de las pruebas.
+- Genera reportes HTML mediante pytest-html
+- Captura automáticamente una imagen de la pantalla en caso de fallo.
 
 ---
 
