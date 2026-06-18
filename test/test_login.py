@@ -1,9 +1,14 @@
 from page.login_page import LoginPage
+from utils.logger import logger
 
 def test_login_ok(driver):
+    logger.info("inicializando el driver para test_login_ok")
     login_page = LoginPage(driver)
 
-    login_page.login("standard_user", "secret_sauce")
+    logger.info("Iresando los datos de entrada para la prueba")
+    login_page.login("standard_user","secret_sauce")
+
+    logger.info("iniciando sesión...")
 
     assert "/inventory.html" in driver.current_url, "No se redirigió al inventario"
 
