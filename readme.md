@@ -6,17 +6,14 @@ Proyecto de automatización de pruebas funcionales desarrollado con Python, Sele
 
 Las pruebas cubren los flujos principales de la aplicación web Swag Labs: login, visualización del inventario y manejo del carrito de compras.
 
-El proyecto utiliza el patrón de diseño Page Object Model (POM) para mejorar la organización, reutilización y mantenibilidad del código.
-
-Además, se implementó un enfoque de Data-Driven Testing utilizando archivos CSV y JSON para separar los datos de prueba de la lógica de los tests, facilitando la reutilización y el mantenimiento de los escenarios automatizados.
-
-Como práctica adicional, se incorporó generación de reportes HTML, capturas de pantalla automáticas y logging en las pruebas de autenticación, con el objetivo de facilitar el análisis y la depuración de errores.
-
+El proyecto implementa el patrón Page Object Model (POM) y diferentes enfoques de automatización, incluyendo Data-Driven Testing mediante archivos CSV y JSON, generación de reportes HTML, logging, capturas de pantalla automáticas y pruebas BDD utilizando Gherkin y Behave.
 
 ## Tecnologías usadas
 - Python
 - Selenium WebDriver
 - Pytest
+- Behave
+- Gherkin
 - Pytest HTML
 - Logging
 - CSV y JSON (Data-Driven Testing)
@@ -33,14 +30,22 @@ pip install -r requirements.txt
 
 
 ## Ejecutar pruebas
-pytest
 
+### Con Pytest
+```
+pytest
+```
+
+### Con Behave
+```
+python3 -m behave
+```
 
 ## Generar reporte HTML
 pytest --html=report.html --self-contained-html
 
 
-## Fucionamiento de las pruebas
+## Funcionamiento de las pruebas
 
 ### test_login.py — Pruebas de autenticación
 
@@ -60,7 +65,7 @@ pytest --html=report.html --self-contained-html
 
 - Implementa Data-Driven Testing mediante `pytest.mark.parametrize()`.
 
-- Utiliza datos externos almacenador en `data/users.csv`.
+- Utiliza datos externos almacenados en `data/users.csv`.
 
 - Lee los datos de prueba a través de `utils/data_reader.py`.
 
@@ -69,6 +74,32 @@ pytest --html=report.html --self-contained-html
 - Valida tanto escenarios positivos como negativos:
     - Credenciales válidas → acceso exitoso al inventario.
     - Credenciales inválidas → visualización del mensaje de error correspondiente.
+
+---
+
+### login.feature — Pruebas BDD con Gherkin y Behave
+
+- Implementa escenarios de autenticación utilizando sintaxis Gherkin.
+
+- Define escenarios positivos y negativos de login.
+
+- Utiliza 'Scenario Outline' para ejecutar múltiples conjuntos de datos.
+
+- Separa la descripción de los escenarios de su implementación en 'login_steps.py'.
+
+---
+
+### login_steps.py
+
+- Implementa los pasos definidos en `login.feature`.
+
+- Reutiliza la clase `LoginPage` para interactuar con la aplicación.
+
+---
+
+### environment.py
+
+- Configura y administra el WebDriver para las pruebas ejecutadas con Behave.
 
 ---
 
