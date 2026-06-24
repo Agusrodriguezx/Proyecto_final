@@ -7,7 +7,6 @@ import os
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
-print(f"API_KEY: {API_KEY}")
 headers = {
     "x-api-key": API_KEY
 }
