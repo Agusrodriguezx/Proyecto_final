@@ -19,10 +19,17 @@ El proyecto implementa el patrón Page Object Model (POM) y diferentes enfoques 
 - CSV y JSON (Data-Driven Testing)
 - Google Chrome + ChromeDriver
 - Git
+- GitHub Actions (CI/CD)
+
+## CI/CD
+
+El proyecto utiliza GitHub Actions para ejecutar las pruebas automáticamente en cada push o pull request a la rama principal.
+
+El workflow corre los tests con Pytest en un entorno Ubuntu con Chrome en modo headless, y genera un reporte HTML como artefacto descargable desde la pestaña Actions de GitHub.
 
 ## Instalación
-`git clone https://github.com/Agusrodriguezx/Pre-Proyecto.git
-cd Pre-Proyecto`
+`git clone https://github.com/Agusrodriguezx/Proyecto_final.git
+cd Proyecto_final`
 
 
 ## Instalación de Dependencias
