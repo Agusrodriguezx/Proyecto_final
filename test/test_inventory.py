@@ -11,13 +11,12 @@ def test_inventory_title(driver_logged):
     titulo = inventory_page.obtener_titulo()
     assert titulo == "Swag Labs", "El título de la página no es correcto"
 
-
+@pytest.mark.smoke
 def test_productos_visibles(driver_logged):
     inventory_page = InventoryPage(driver_logged)
 
     productos = inventory_page.obtener_productos()
     assert len(productos) > 0
-
 
 def test_ui_elements(driver_logged):
     inventory_page = InventoryPage(driver_logged)

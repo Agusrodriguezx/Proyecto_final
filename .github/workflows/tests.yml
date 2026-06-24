@@ -1,0 +1,33 @@
+name: Tests automatizados
+
+on:
+  push:
+    braches:
+      -main
+
+jobs:
+  run-tests:
+    run_on: ubuntu-latest
+
+    steps:
+      -name: Descargar repositorio
+      users: actions/checkout@v4
+
+      -name: Configurar python
+      users: actions/setup -python@v5
+      with:
+        python-version:"13.13"
+
+      -name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+      -name: Ejecutar pruebas 
+      run: pytest
+
+      -name: Guardar reporte como artefacto
+      uses: actions/upload-artifact@v4
+      with:
+        name: reporte-pytest-html
+        path: report.html

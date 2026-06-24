@@ -1,6 +1,8 @@
 from page.login_page import LoginPage
 from utils.logger import logger
+import pytest
 
+@pytest.mark.smoke
 def test_login_ok(driver):
     logger.info("inicializando el driver para test_login_ok")
     login_page = LoginPage(driver)

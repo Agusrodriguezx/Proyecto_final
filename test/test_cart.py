@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pytest
 
+@pytest.mark.smoke
 def test_cart(driver_logged):
     driver = driver_logged
 
