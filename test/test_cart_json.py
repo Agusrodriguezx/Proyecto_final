@@ -26,4 +26,4 @@ def test_cart_json(driver_logged):
                 
                 break
 
-        assert encontrado, f"Producto incorrecto o faltante: {producto_json["nombre"]}" 
+        assert encontrado, f"Producto incorrecto o faltante: {producto_json["nombre"]}"

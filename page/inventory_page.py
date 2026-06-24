@@ -12,7 +12,7 @@ class InventoryPage:
         self.add_to_cart_buttons = (By.CLASS_NAME, "btn_inventory")
         self.contador_carrito = (By.CLASS_NAME, "shopping_cart_badge")
         self.link_carrito = (By.CLASS_NAME, "shopping_cart_link")
-        self.nombres_productos = (By.CLASS_NAME, "inventory_item_name ")
+        self.nombres_productos = (By.CLASS_NAME, "inventory_item_name")
 
     def obtener_titulo(self):
         return self.driver.title
@@ -36,7 +36,8 @@ class InventoryPage:
         return self.driver.find_element(*self.nombres_productos).text
 
     def ir_al_carrito(self):
-        self.driver.find_element(*self.link_carrito).click()
+        elemento = self.driver.find_element(*self.link_carrito)
+        self.driver.execute_script("arguments[0].click();", elemento)
 
     def agregar_producto_por_nombre(self,nombre_producto_json):
         productos = self.driver.find_elements(*self.inventory_items)
@@ -45,6 +46,7 @@ class InventoryPage:
             nombre = producto.find_element(*self.nombres_productos).text
 
             if nombre == nombre_producto_json:
-                producto.find_element(*self.add_to_cart_buttons).click()
+                boton = producto.find_element(*self.add_to_cart_buttons)
+                self.driver.execute_script("arguments[0].click();", boton)
 
                 break
