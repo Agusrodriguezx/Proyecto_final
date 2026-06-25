@@ -6,7 +6,7 @@ Proyecto de automatización de pruebas funcionales desarrollado con Python, Sele
 
 Las pruebas cubren los flujos principales de la aplicación web Swag Labs: login, visualización del inventario y manejo del carrito de compras.
 
-El proyecto implementa el patrón Page Object Model (POM) y diferentes enfoques de automatización, incluyendo Data-Driven Testing mediante archivos CSV y JSON, generación de reportes HTML, logging, capturas de pantalla automáticas y pruebas BDD utilizando Gherkin y Behave.
+El proyecto implementa el patrón Page Object Model (POM) y diferentes enfoques de automatización, incluyendo Data-Driven Testing mediante archivos CSV y JSON, generación de reportes HTML, logging, capturas de pantalla automáticas y pruebas BDD utilizando Gherkin y Behave. Incluye también pruebas de API REST con Requests y Behave como práctica complementaria.
 
 ## Tecnologías usadas
 - Python
@@ -20,6 +20,7 @@ El proyecto implementa el patrón Page Object Model (POM) y diferentes enfoques 
 - Google Chrome + ChromeDriver
 - Git
 - GitHub Actions (CI/CD)
+- Requests
 
 ## CI/CD
 
